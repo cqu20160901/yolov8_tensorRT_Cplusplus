@@ -1,5 +1,6 @@
-# yolov8_tensorRT_Cplusplus
-yolov8 tensorRT 的 C++部署。
+# yolov8 tensorRT 的 C++ 部署
+
+本示例中，包含完整的代码、模型、测试图片、测试结果。
 
 TensorRT版本：TensorRT-7.1.3.4
 
