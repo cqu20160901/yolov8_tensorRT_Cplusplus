@@ -90,4 +90,7 @@ tensorRT 时耗
 ## 相关链接
 
 [yolov8 瑞芯微 RKNN 的 C++部署](https://github.com/cqu20160901/yolov8n_onnx_tensorRT_rknn_horizon)
+
 [yolov8 瑞芯微RKNN和地平线Horizon芯片仿真测试部署-2023年11月15日版本](https://blog.csdn.net/zhangqian_1/article/details/134438275)
+
+[yolov8 瑞芯微RKNN和地平线Horizon芯片仿真测试部署](https://blog.csdn.net/zhangqian_1/article/details/128918268)
