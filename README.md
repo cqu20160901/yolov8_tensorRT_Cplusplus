@@ -3,6 +3,8 @@ yolov8 tensorRT 的 C++部署。
 
 TensorRT版本：TensorRT-7.1.3.4
 
+导出适配本实例的onnx模型参考[yolov8 导出onnx-2023年11月15日版本](https://blog.csdn.net/zhangqian_1/article/details/134438275)
+
 编译前修改 CMakeLists.txt 对应的TensorRT版本
 
 ![17012439652981](https://github.com/cqu20160901/yolov8_tensorRT_Cplusplus/assets/22290931/68586322-556a-42ef-8444-1064b42c86f9)
