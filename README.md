@@ -34,7 +34,8 @@ tensorRT 测试效果
 
 tensorRT 时耗
 
-![17012420664762](https://github.com/cqu20160901/yolov8_tensorRT_Cplusplus/assets/22290931/781af480-1f2c-473e-a254-366598866141)
+![17012423758547](https://github.com/cqu20160901/yolov8_tensorRT_Cplusplus/assets/22290931/d2b2772a-db28-4a44-979e-5cad89a15ed5)
+
 
 
 修改相关的路径
