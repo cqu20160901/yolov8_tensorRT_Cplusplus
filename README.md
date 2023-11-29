@@ -4,6 +4,7 @@ yolov8 tensorRT 的 C++部署。
 TensorRT版本：TensorRT-7.1.3.4
 
 导出适配本实例的onnx模型参考[yolov8 导出onnx-2023年11月15日版本](https://blog.csdn.net/zhangqian_1/article/details/134438275)
+。
 
 编译前修改 CMakeLists.txt 对应的TensorRT版本
 
@@ -20,7 +21,9 @@ make
 ```
 
 ## 运行
+
 ```powershell
+# 运行时如果.trt模型存在则直接加载，若不存会自动先将onnx转换成 trt 模型，并存在给定的位置，然后运行推理。
 cd build
 ./yolo_trt
 ```
@@ -75,5 +78,8 @@ tensorRT 时耗
 
 ```
 
+## 替换模型说明
 
+1）按照本实例给的导出onnx方式导出对应的onnx
+2）
 
