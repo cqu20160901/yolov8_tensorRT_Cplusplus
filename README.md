@@ -5,7 +5,8 @@ TensorRT版本：TensorRT-7.1.3.4
 
 编译前修改 CMakeLists.txt 对应的TensorRT版本
 
-![17012433486778](https://github.com/cqu20160901/yolov8_tensorRT_Cplusplus/assets/22290931/62dbacce-3197-43b1-b44d-ed18f4619ba4)
+![17012439652981](https://github.com/cqu20160901/yolov8_tensorRT_Cplusplus/assets/22290931/68586322-556a-42ef-8444-1064b42c86f9)
+
 
 ## 编译
 ```powershell
