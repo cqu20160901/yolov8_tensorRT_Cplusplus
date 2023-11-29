@@ -6,7 +6,8 @@ TensorRT版本：TensorRT-7.1.3.4
 
 导出适配本实例的onnx模型参考[yolov8 导出onnx-2023年11月15日版本](https://blog.csdn.net/zhangqian_1/article/details/134438275)。
 
-编译前修改 CMakeLists.txt 对应的TensorRT版本
+## 修改的 TensorRT 位置
+修改 CMakeLists.txt 对应的TensorRT版本
 
 ![17012439652981](https://github.com/cqu20160901/yolov8_tensorRT_Cplusplus/assets/22290931/68586322-556a-42ef-8444-1064b42c86f9)
 
@@ -42,6 +43,11 @@ tensorRT 时耗
 
 ![17012423758547](https://github.com/cqu20160901/yolov8_tensorRT_Cplusplus/assets/22290931/d2b2772a-db28-4a44-979e-5cad89a15ed5)
 
+## 替换模型说明
+
+1）按照本实例给的导出onnx方式导出对应的onnx；导出的onnx模型建议simplify后再转trt模型。
+
+2）注意修改后处理相关 postprocess.hpp 中相关的参数（类别、输入分辨率等）。
 
 修改相关的路径
 ```cpp
@@ -76,13 +82,6 @@ tensorRT 时耗
     printf("== obj: %d \n", int(float(YOLO.DetectiontRects_.size()) / 6.0));
 
 ```
-
-## 替换模型说明
-
-1）按照本实例给的导出onnx方式导出对应的onnx；导出的onnx模型建议simplify后再转trt模型。
-
-2）注意修改后处理相关 postprocess.hpp 中相关的参数（类别、输入分辨率等）。
-
 
 ## 特别说明
 
