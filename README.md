@@ -43,7 +43,8 @@ tensorRT 测试效果
 
 tensorRT 时耗
 
-![image](https://github.com/user-attachments/assets/c9dc8ef1-8022-4f9e-8dd5-44e3ce582b96)
+![image](https://github.com/user-attachments/assets/6490069e-4d8a-48f3-88e7-58eb70ae3abe)
+
 
 
 ## 替换模型说明
