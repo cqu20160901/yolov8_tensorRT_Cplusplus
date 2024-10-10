@@ -43,7 +43,8 @@ tensorRT 测试效果
 
 tensorRT 时耗
 
-![17012423758547](https://github.com/cqu20160901/yolov8_tensorRT_Cplusplus/assets/22290931/d2b2772a-db28-4a44-979e-5cad89a15ed5)
+![image](https://github.com/user-attachments/assets/c9dc8ef1-8022-4f9e-8dd5-44e3ce582b96)
+
 
 ## 替换模型说明
 
