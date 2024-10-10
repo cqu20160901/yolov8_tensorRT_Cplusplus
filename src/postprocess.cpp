@@ -90,7 +90,7 @@ int GetResultRectYolov8::GenerateMeshgrid()
     return ret;
 }
 
-int GetResultRectYolov8::GetConvDetectionResult(float **pBlob, std::vector<float> &DetectiontRects)
+int GetResultRectYolov8::GetConvDetectionResult(std::vector<float *> &BlobPtr, std::vector<float> &DetectiontRects)
 {
     int ret = 0;
     if (meshgrid.empty())
@@ -109,8 +109,8 @@ int GetResultRectYolov8::GetConvDetectionResult(float **pBlob, std::vector<float
 
     for (int index = 0; index < headNum; index++)
     {
-        float *cls = (float *)pBlob[index * 2 + 0];
-        float *reg = (float *)pBlob[index * 2 + 1];
+        float *cls = BlobPtr[index * 2 + 0];
+        float *reg = BlobPtr[index * 2 + 1];
 
         for (int h = 0; h < mapSize[index][0]; h++)
         {
@@ -179,7 +179,7 @@ int GetResultRectYolov8::GetConvDetectionResult(float **pBlob, std::vector<float
 
         if (classId != -1)
         {
-            // ½«¼ì²â½á¹û°´ÕÕclassId¡¢score¡¢xmin1¡¢ymin1¡¢xmax1¡¢ymax1 µÄ¸ñÊ½´æ·ÅÔÚvector<float>ÖĞ
+            // å°†æ£€æµ‹ç»“æœæŒ‰ç…§classIdã€scoreã€xmin1ã€ymin1ã€xmax1ã€ymax1 çš„æ ¼å¼å­˜æ”¾åœ¨vector<float>ä¸­
             DetectiontRects.push_back(float(classId));
             DetectiontRects.push_back(float(score));
             DetectiontRects.push_back(float(xmin1));
