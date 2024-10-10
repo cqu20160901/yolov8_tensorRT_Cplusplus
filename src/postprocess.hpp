@@ -26,7 +26,7 @@ public:
 
     int GenerateMeshgrid();
 
-    int GetConvDetectionResult(float **pBlob, std::vector<float> &DetectiontRects);
+    int GetConvDetectionResult(std::vector<float *> &BlobPtr, std::vector<float> &DetectiontRects);
 
     float sigmoid(float x);
 
