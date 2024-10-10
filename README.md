@@ -60,8 +60,7 @@ tensorRT 时耗
     int img_width = SrcImage.cols;
     int img_height = SrcImage.rows;
 
-    CNN YOLO(OnnxFile, SaveTrtFilePath, 1, 3, 640, 640, 7);  // 1, 3, 640, 640, 7 前四个为模型输入的NCWH, 7为模型输出叶子节点的个数+1，（本示例中的onnx模型输出有6个叶子节点，再+1=7）
-    YOLO.ModelInit();
+    CNN YOLO(OnnxFile, SaveTrtFilePath, 1, 3, 640, 640);
     YOLO.Inference(SrcImage);
 
     for (int i = 0; i < YOLO.DetectiontRects_.size(); i += 6)
@@ -97,3 +96,10 @@ tensorRT 时耗
 
 [yolov8 瑞芯微RKNN和地平线Horizon芯片仿真测试部署](https://blog.csdn.net/zhangqian_1/article/details/128918268)
 
+
+## 2024-10-06
+
+### 1）预处理优化
+原来为：用 opencv 进行预处理(resize-转rgb-转float-减均值除方差) 
+修改为：用 cuda 提供的 nppi 库进行预处理(resize-转rgb-转float-减均值除方差) 
+    优化效果：10FPS情况下 CPU 占用减少 62%
