@@ -1,5 +1,7 @@
 #include "src/CNN.hpp"
 #include <opencv2/opencv.hpp>
+#include <thread>
+#include <chrono>
 
 int main()
 {
@@ -11,7 +13,20 @@ int main()
     int img_height = SrcImage.rows;
 
     CNN YOLO(OnnxFile, SaveTrtFilePath, 1, 3, 640, 640);
-    YOLO.Inference(SrcImage);
+
+    auto t_start = std::chrono::high_resolution_clock::now();
+    int Temp = 1000;
+    
+    for (int i = 0; i < Temp; i++)
+    {
+        YOLO.Inference(SrcImage);
+        // std::this_thread::sleep_for(std::chrono::milliseconds(95));
+    }
+    auto t_end = std::chrono::high_resolution_clock::now();
+    float total_inf = std::chrono::duration<float, std::milli>(t_end - t_start).count();
+    std::cout << "Info: " << Temp << " times ave cost: " << total_inf / float(Temp) << " ms." << std::endl;
+
+
 
     for (int i = 0; i < YOLO.DetectiontRects_.size(); i += 6)
     {
