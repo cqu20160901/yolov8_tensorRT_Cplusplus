@@ -10,7 +10,7 @@ message(STATUS "Find CUDA include at ${CUDA_INCLUDE_DIRS}")
 message(STATUS "Find CUDA libraries: ${CUDA_LIBRARIES}")
 
 # TensorRT
-set(TENSORRT_ROOT /zhangqian/workspaces1/TensorRT/TensorRT-7.1.3.4/TensorRT-7.1.3.4)
+set(TENSORRT_ROOT /home/zq/Detect/TensorRT-8.6.1.6)
 
 find_path(TENSORRT_INCLUDE_DIR NvInfer.h
         HINTS ${TENSORRT_ROOT} PATH_SUFFIXES include/)
@@ -34,4 +34,4 @@ set(COMMON_INCLUDE ./common)
 include_directories(${CUDA_INCLUDE_DIRS} ${TENSORRT_INCLUDE_DIR} ${OpenCV_INCLUDE_DIRS} ${COMMON_INCLUDE})
 
 add_executable(yolo_trt main.cpp src/CNN.cpp src/postprocess.cpp)
-target_link_libraries(yolo_trt ${OpenCV_LIBRARIES} ${CUDA_LIBRARIES} ${TENSORRT_LIBRARY})
+target_link_libraries(yolo_trt ${OpenCV_LIBRARIES} ${CUDA_LIBRARIES} ${TENSORRT_LIBRARY} ${CUDA_npp_LIBRARY} ${CUDA_cublas_LIBRARY})
