@@ -100,6 +100,9 @@ tensorRT 时耗
 ## 2024-10-06
 
 ### 1）预处理优化
+
 原来为：用 opencv 进行预处理(resize-转rgb-转float-减均值除方差) 
-修改为：用 cuda 提供的 nppi 库进行预处理(resize-转rgb-转float-减均值除方差) 
+
+修改为：用 cuda 提供的 nppi 库进行预处理(resize-转rgb-转float-减均值除方差)
+
     优化效果：10FPS情况下 CPU 占用减少 62%
